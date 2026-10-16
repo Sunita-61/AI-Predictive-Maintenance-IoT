@@ -1,0 +1,70 @@
+{
+    "evaluated_at": "2026-10-16 13:31:24",
+    "dataset_name": "AI4I 2020 Predictive Maintenance Dataset",
+    "dataset_source": "UCI Machine Learning Repository / Matan Atzmon et al.",
+    "dataset_file": "ai4i2020.csv",
+    "dataset_sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "model_file": "predictive_maintenance_rf.joblib",
+    "model_sha256": "7cda9011a34b0fbd86d15480b88e8d3f64d514f2587d0e4b4b76d96f3742f71a",
+    "split_file": "train_test_split.json",
+    "split_method": "Stratified Train/Test Split (80/20) with random_state=42",
+    "total_test_samples": 2000,
+    "class_support": {
+        "total": 2000,
+        "positive_failure": 68,
+        "negative_normal": 1932
+    },
+    "target_positive_class": 1,
+    "metric_averaging_strategy": "binary",
+    "accuracy": 0.9855,
+    "precision": 0.7671232876712328,
+    "recall": 0.8235294117647058,
+    "f1_score": 0.7943262411347518,
+    "roc_auc": 0.9844606320789184,
+    "pr_auc": 0.8672415658522468,
+    "confusion_matrix": {
+        "tn": 1915,
+        "fp": 17,
+        "fn": 12,
+        "tp": 56,
+        "matrix": [
+            [
+                1915,
+                17
+            ],
+            [
+                12,
+                56
+            ]
+        ]
+    },
+    "classification_report": {
+        "0": {
+            "precision": 0.9937727036844837,
+            "recall": 0.9912008281573499,
+            "f1-score": 0.992485099766779,
+            "support": 1932.0
+        },
+        "1": {
+            "precision": 0.7671232876712328,
+            "recall": 0.8235294117647058,
+            "f1-score": 0.7943262411347518,
+            "support": 68.0
+        },
+        "accuracy": 0.9855,
+        "macro avg": {
+            "precision": 0.8804479956778583,
+            "recall": 0.9073651199610279,
+            "f1-score": 0.8934056704507654,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.9860666235400332,
+            "recall": 0.9855,
+            "f1-score": 0.98574769857329,
+            "support": 2000.0
+        }
+    },
+    "note": "Accuracy is reported for completeness but is uninformative due to the 96.6% majority non-failure class. Prioritize Recall, Precision, and PR-AUC.",
+    "split_limitation_disclaimer": "A random stratified split evaluates held-out classification under identically distributed conditions. However, because the observations derive from a continuous simulation stream, a random split does not demonstrate temporal forecasting of future machine degradation or generalization to completely unseen machines."
+}

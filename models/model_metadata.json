@@ -1,0 +1,96 @@
+{
+    "created_at": "2026-10-16 12:32:15",
+    "dataset_name": "AI4I 2020 Predictive Maintenance Dataset",
+    "dataset_source": "UCI Machine Learning Repository (Dua and Graff, 2019 / Matan Atzmon et al.)",
+    "dataset_file": "ai4i2020.csv",
+    "dataset_sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "dataset_total_rows": 10000,
+    "target_column": "Machine failure",
+    "positive_class_definition": "Machine failure == 1 (Failure detected across any failure mode)",
+    "negative_class_definition": "Machine failure == 0 (Normal nominal operation)",
+    "split_method": "stratified",
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_samples": 8000,
+    "test_samples": 2000,
+    "features": [
+        "Type",
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "Temp_Difference_K",
+        "Power_Proxy_W",
+        "Overstrain_Proxy"
+    ],
+    "feature_order": [
+        "Type",
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "Temp_Difference_K",
+        "Power_Proxy_W",
+        "Overstrain_Proxy"
+    ],
+    "categorical_features": [
+        "Type"
+    ],
+    "numerical_features": [
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "Temp_Difference_K",
+        "Power_Proxy_W",
+        "Overstrain_Proxy"
+    ],
+    "engineered_feature_definitions": {
+        "Temp_Difference_K": "Process temperature [K] - Air temperature [K] (thermal dissipation efficacy)",
+        "Power_Proxy_W": "Torque [Nm] * Rotational speed [rpm] * (2*pi/60) (mechanical power proxy)",
+        "Overstrain_Proxy": "Torque [Nm] * Tool wear [min] (cumulative stress proxy)"
+    },
+    "excluded_columns": {
+        "identifiers": [
+            "UDI",
+            "Product ID"
+        ],
+        "leakage_safeguards": [
+            "TWF",
+            "HDF",
+            "PWF",
+            "OSF",
+            "RNF"
+        ]
+    },
+    "model_class": "sklearn.ensemble.RandomForestClassifier",
+    "hyperparameters": {
+        "n_estimators": 150,
+        "max_depth": 12,
+        "class_weight": "balanced",
+        "random_state": 42,
+        "n_jobs": null
+    },
+    "decision_threshold": 0.5,
+    "environment_versions": {
+        "python": "3.14.8",
+        "scikit-learn": "1.9.1",
+        "pandas": "3.0.6",
+        "numpy": "2.5.4",
+        "joblib": "1.6.0"
+    },
+    "class_balance_train": {
+        "normal": 7729,
+        "failure": 271
+    },
+    "class_balance_test": {
+        "normal": 1932,
+        "failure": 68
+    },
+    "model_file": "predictive_maintenance_rf.joblib",
+    "model_sha256": "7cda9011a34b0fbd86d15480b88e8d3f64d514f2587d0e4b4b76d96f3742f71a",
+    "split_file": "train_test_split.json"
+}

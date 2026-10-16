@@ -1,0 +1,60 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large dataset files (protect repo size and licensing)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Trained model binaries and serialization artifacts (exclude large binaries, track metadata)
+models/*.joblib
+models/*.pkl
+models/*.bin
+
+# Generated outputs (preserve summary metrics and plots for portfolio inspection)
+outputs/metrics/*
+!outputs/metrics/.gitkeep
+!outputs/metrics/*.json
+!outputs/metrics/*.csv
+outputs/plots/*
+!outputs/plots/.gitkeep
+!outputs/plots/*.png
+outputs/predictions/*
+!outputs/predictions/.gitkeep
+
+# Temporary and build artifacts
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
